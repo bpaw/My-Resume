@@ -1,0 +1,152 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{xcolor}
+
+\usepackage[scale={0.85, 0.9}]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+\usepackage{xpatch}
+\xpatchcmd{\cventry}{.\strut}{\strut}{}{}
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Brandon} % Your first name
+\familyname{Paw} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\address{San Diego, CA 92122}{}
+\mobile{(661) 747 9379}
+\email{bpaw.dev@gmail.com}
+\social[linkedin]{brandonpaw}
+\social[github]{bpaw}
+% \httplink[www.brandonpaw.com]{www.brandonpaw.com}
+% \homepage{staff.org.edu/~jsmith}{staff.org.edu/$\sim$jsmith} 
+% The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+% \extrainfo{additional information}
+
+\usepackage{etoolbox}
+\patchcmd{\makecvtitle}{{minipage}[b]}{{minipage}[t]}{}{}
+\patchcmd{\makecvtitle}{{tabular}[b]}{{tabular}}{}{}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	CURRICULUM VITAE
+%----------------------------------------------------------------------------------------
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{\textcolor{black}{Experience}}
+
+% \cventry{October 2017 -- Present}{Software Engineer (Part Time)}{}{CleverPet}{}{
+% \begin{itemize}
+% \item Accepted a return offer, making me the sole developer of the Android codebase 
+% \item I am currently implementing a new logging architecture to provide clearer mental models of mobile crashes for Engineers without Android proficiency
+% \end{itemize}
+% }
+
+\cventry{Jun. 2017 -- Present}{Software Engineering Intern}{}{CleverPet}{}{
+\begin{itemize}
+\item Developed full stack Android features like live charts by creating RESTful endpoints that communicate with the Android app
+\item Improved data communication speeds by cutting computation time in half using a task queue 
+\item Resolved 50\% of Android crashes by creating a uniform dependency checking utility
+% \item Wrote and added infrastructure for unit tests that verify the correctness of modules that interact with third party platforms
+\item Worked with: Java, Python, Android Studio, Firebase, and several Google Cloud Platform services
+\end{itemize}
+}
+
+\cventry{Sep. 2017 -- Present}{Software Engineering Intern}{}{Learning Equality}{}{
+\begin{itemize}
+\item Designing an invocable Django management command to optimize the Webpack build for Frontend assets by decoupling them from the Django server and allow for the creation of more dynamic builds
+\item Worked with: Python, JavaScript, Django, Webpack, Node
+\end{itemize}
+}
+
+\cventry{Sep. 2017 -- Present}{CSE Tutor}{}{University of California, San Diego}{}{
+\begin{itemize}
+\item Gaining experience communicating foreign concepts
+\item  Wrote testing scripts in python to automate grading student assignments
+% \item Wrote testing scripts in python to automate grading student assignments and designed programming assignments in C and ARM that utilized CuTest to emphasize the importance of testing
+\item Debugged students code, written in C and ARM Assembly
+\end{itemize}
+}
+% * <bpaw@ucsd.edu> 2017-08-05T19:06:57.721Z:
+%
+% ^.
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{\textcolor{black}{Education}}
+
+\cventry{Oct. 2015 -- Present}{University of California, San Diego}{}{Computer Science B.S.}{Major GPA -- \textbf{3.9/4.0}}{
+\begin{itemize}
+% \item Major GPA -- \textbf{3.90 / 4.00}
+\item Expected Graduation -- June of 2019
+\item Relevant Coursework --  Data Structures, Algorithms, Object Oriented Programming, and Computer Organization and Systems Programming
+\end{itemize}
+}
+
+%----------------------------------------------------------------------------------------
+%	Projects Section
+%----------------------------------------------------------------------------------------
+
+\section{\textcolor{black}{Projects}}
+\cventry{Aug. 2017}{Receipt Repo}{}{}{}{
+\begin{itemize}
+\item Developed an Android application to track receipts
+\item Implemented an Android app, web app, and a REST API in Java to store receipts using the Spring and Hibernate Frameworks
+\item Made with: Java, AngularJS, Firebase, Spring Framework, Volley, Picasso, JUnit, Mockito
+\end{itemize}
+}
+\cventry{Jun. 2017}{youPlay}{}{}{}{
+\begin{itemize}
+\item Python script that scans webpages for YouTube links using BeautifulSoup4 and creates a playlist from the videos listed using the YouTube API
+\item Uses OAuth in order to sign into the specific user account to create the playlist in
+\item Made with: Python, YouTube API, BeautifulSoup4
+\end{itemize}
+}
+\cventry{Feb. 2017}{LogIt}{}{}{}{
+\begin{itemize}
+\item Developed a web application to track user productivity
+\item Implemented backend that stores and retrieves user information via JSON files and a custom made calendar to retrieve user statistics from specified dates
+\item Made with: Node, Express, JavaScript, jQuery, Chart.js, HTML, CSS 
+\end{itemize}
+}
+\cventry{Dec. 2016}{VAC Go}{}{}{}{
+\begin{itemize}
+\item Worked in a team of three to create a forum to streamline the course scheduling process
+\item Implemented backend features like storing and retrieving posts and comments
+\item Made with: Node, Express, JavaScript, MaterializeCSS, HTML, CSS
+\end{itemize}
+}
+
+
+%----------------------------------------------------------------------------------------
+%	SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{\textcolor{black}{Skills}}
+
+\cvitem{Industry:}{Java, python, Android, Google Cloud Platform, Django, Webpack, Firebase}
+\cvitem{Tutoring:}{C, ARM Assembly}
+\cvitem{Other:}{C++, JavaScript, jQuery, Node, Express, AngularJS}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
